@@ -6,3 +6,86 @@
 #header .container .row .col-md-1 {
     line-height: 80px;
 }
+
+#header .container .row .col-md-1 a {
+    color: #565656;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+#header .container .row .col-md-1 a:hover {
+    color: #006cc0;
+}
+
+.banner_box {
+    position: relative;
+}
+
+#banner {
+    height: 650px;
+    background: url(../img/banner_1.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.text {
+    position: absolute;
+    top: 23%;
+}
+
+.text div {
+    background-color: white;
+    filter: opacity(0.6);
+    width: 120%;
+    height: 70px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 70px;
+}
+
+.text div:hover {
+    color: white;
+    line-height: 70px;
+    background-color: #000000;
+}
+
+#footer-box .divide {
+    width: 100vw;
+    margin-top: 50px;
+    height: 10px;
+    background: royalblue;
+}
+
+#footer-box .footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#footer-box .footer .info {
+
+}
+
+#footer-box .footer .follow_me {
+    display: flex;
+    flex-direction: column;
+}
+
+#footer-box .footer .follow_me img {
+    width: 96px;
+    height: 96px;
+    align-self: center;
+
+}
+
+#footer-box .footer .follow_me p {
+
+}
+
+#footer-box .footer .follow_me p img {
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+    border-radius: 14px;
+    background: #3c3c3c;
+}
