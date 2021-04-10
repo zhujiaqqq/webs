@@ -1,5 +1,7 @@
 #header .container {
     height: 80px;
+    box-sizing:border-box;
+    margin-top: 10px;
     text-align: center;
 }
 
