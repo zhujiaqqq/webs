@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>解决方案</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="dist/css/bootstrap.css" rel="stylesheet">
+		<link href="css/index.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/plant.css" />
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!--头部-->
+		<div id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+					</div>
+					<div class="col-md-2"></div>
+					<div class="col-md-1">
+						<a href="index.html">首页</a>
+					</div>
+					<div class="col-md-1">
+						<a href="plant.html" style="color: orangered;">解决方案</a>
+					</div>
+					<div class="col-md-1">
+						<a href="">物联网</a>
+					</div>
+					<div class="col-md-1">
+						<a href="">OEM业务</a>
+					</div>
+					<div class="col-md-1">
+						<a href="about_us.html">关于我们</a>
+					</div>
+					<div class="col-md-1">
+						<a href="">联系我们</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="app">
+			<div class="plant_title">
+				<h1>打破物联网场景碎片化</h1>
+				<h1><small>解决不同地产/物业场景下的设备统一连接、管理、运营及生态融合问题</small></h1>
+			</div>
+
+			<div class="plant_type">
+				<p :class="{active:index==ins}" @click="chooseItem(index)" v-for="(item,index) in items"
+					:v-key="item.title+index" class="plant_type_item">{{item.title}}</p>
+			</div>
+
+			<div class="plant_info">
+				<p class="plant_name">{{currentItem.title}}</p>
+				<p class="desc">{{currentItem.desc}}</p>
+				<div class="plant_list">
+					<div v-for="(item,index) in currentItem.sections" class="section" :v-key="item.name+index">
+						<img :src="item.pic">
+						<p class="name">{{item.name}}</p>
+						<p class="detail">
+							{{item.desc}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!--底部-->
+		<div id="footer-box">
+			<div class="divide"></div>
+			<div class="container ">
+				<div class="row">
+					<div class="col-md-6 info">
+						<p>tel:4000-000-000</p>
+						<p>email:support@qq.com</p>
+					</div>
+					<div class="col-md-6 follow_me">
+						<img src="./img/qr.jpg">
+						<p>关注我们：<img src="./img/weix.png"> <img src="./img/tm.png"> <img src="./img/taob.png"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			let app = new Vue({
+				el: '#app',
+				data: {
+					ins: 0,
+					items: [{
+							title: '智慧社区',
+							desc: '通过为业主提供便捷、舒适、安全的生活环境，为物业提供完善的业务保障，打造持续的服务力，提升社区服务品质',
+							sections: [{
+								pic: './img/sq0.png',
+								name: '全场景社区服务',
+								desc: '联通环境、楼宇、消防、门禁等各系统，场景联动打造智慧人居生活服务体系'
+							}, {
+								pic: './img/sq1.png',
+								name: '完善的服务保障',
+								desc: '社区空间在线化，运营、业务可管，异常事件可控'
+							}, {
+								pic: './img/sq2.png',
+								name: '智慧驱动产品溢价',
+								desc: '智能化打造安全、便捷居住体验，驱动空间产品科技创新'
+							}, {
+								pic: './img/sq3.png',
+								name: '集团管理运筹帷幄',
+								desc: '可视化集团战图，全面了解项目运营情况，提升管理能效'
+							}]
+						},
+						{
+							title: '智能家居',
+							desc: '基于室内智能家居管理场景提出的运营解决方案，可应用于住宅、长租公寓、酒店、联合办公等具有室内智能设备管理需求的场景及业态，具有广泛的生态对接能力，可帮助企业形成标准的智能家居生态体系，实现快速批量交付，辅助企业建立完整的智能家居运营体系',
+							sections: [{
+								pic: './img/jj0.png',
+								name: '智能家居运营',
+								desc: '满足基本的智能家居前装-交付-后装-运营的管理诉求，辅助智能家居业务统一管理'
+							}, {
+								pic: './img/jj1.png',
+								name: '用户场景联动',
+								desc: '多交互入口、更强大的设备联动能力，与业务系统对接，可组合服务更多用户场景'
+							}, {
+								pic: './img/jj2.png',
+								name: '强大生态资源',
+								desc: '提供生态服务，支持多品牌AI产品，减少商务、技术对接过程，实现快速应用'
+							}, {
+								pic: './img/jj3.png',
+								name: '物业运营赋能',
+								desc: '打通业主家庭与物业的连接点，创造更多增值服务空间'
+							}]
+						},
+						{
+							title: '智慧园区',
+							desc: '通过物联网技术和智慧应用，进行园区内外资源的统一整合，从而实现基础设施网络化、建设管理精细化、服务功能专业化和产业发展智能化，使管理服务更高效便捷',
+							sections: [{
+								pic: './img/yq0.png',
+								name: '场景无缝衔接',
+								desc: '融合生活、办公、娱乐场景，全方位场景服务让员工更专注'
+							}, {
+								pic: './img/yq1.png',
+								name: '助力企业成长',
+								desc: '以完善体验、控制成本、数据赋能、信息共享惠及园区企业，帮助企业高速成长'
+							}, {
+								pic: './img/yq2.png',
+								name: '优化持续运营',
+								desc: '数字化与人工监测结合，业务全可管，事件全可控，带动园区管理和企业服务升级，实现持续运营'
+							}, {
+								pic: './img/yq3.png',
+								name: '重构服务生态',
+								desc: '团对内增值场景体系，对外提升口碑，实现品牌全面升级'
+							}]
+						},
+						{
+							title: '智慧商业',
+							desc: '将物联网渗透到商业运营的每一个环节，对设备管理、服务运营、采购预测、巡检作业、用户服务等进行全面的智能化管理，赋予商业地产新的商业逻辑和价值',
+							sections: [{
+								pic: './img/sy0.png',
+								name: '灵活排程配置快捷',
+								desc: '支持快捷排程与方案设置，智能联动场景预设配置，一手掌握开闭店等基础运维信息'
+							}, {
+								pic: './img/sy1.png',
+								name: '丰富场景高效管理',
+								desc: '多场景设备自动化联动接入，涵盖通行、安防、设施设备、能耗等，让服务智能化，管理效能化'
+							}, {
+								pic: './img/sy2.png',
+								name: '建立差异增吸引客户',
+								desc: '通过智慧运营分析掌控商场、用户现状，促进商场布置固态化改善，了解客户，赢得客户'
+							}, {
+								pic: './img/sy3.png',
+								name: '项目汇集整体管控',
+								desc: '借助商业+物联网智能建设，集团有效管理项目，重构传统商业服务体系，提升企业服务口碑'
+							}]
+						},
+						{
+							title: '智慧办公',
+							desc: '针对联合办公运营管理难度大、成本难以下降、用户体验不佳等现实痛点，以物联网的手段进行场景融合，优化管理架构，构建统一入口，从而实现创新的办公运营',
+							sections: [{
+								pic: './img/bg0.png',
+								name: '资源优化',
+								desc: '多场景分区控制，轻松打造分时租赁模式，实现场地资源的最大化利用'
+							}, {
+								pic: './img/bg1.png',
+								name: '智能管理',
+								desc: '自动化的办公环境管理，数据化的呈现，为员工提供健康舒适的办公环境'
+							}, {
+								pic: './img/bg2.png',
+								name: '统一运营',
+								desc: '业务管理+设备管理，搭建统一运营平台，运营方可高效对相应区域进行快速管控，进行各类资源的最佳配置'
+							}]
+						},
+						{
+							title: '咨询业务',
+							desc: '云智易智能化咨询服务，可以帮助泛不动产运营企业利用物联网、人工智能来推动工作流程优化、服务提升和产品创新。依托过往所积累的丰富项目经验和专业优势，结合客户的地产智能化运营情况，运用全面分析的方法，为客户提供决策依据和优化方案',
+							sections: [{
+								pic: './img/yw0.png',
+								name: '丰富的落地经验',
+								desc: '经历过从0-1的物联网建设过程，具有20+标杆房企的落地经验'
+							}, {
+								pic: './img/yw1.png',
+								name: '充分的业务理解',
+								desc: '具备多年空间智能化经验，对物联网赋能空间运营有充分的实践和理解'
+							}, {
+								pic: './img/yw2.png',
+								name: '中立的第三方',
+								desc: '中立开放的第三方物联网解决方案商，立足于为B端企业输出全面的咨询、设计、监理和落地能力'
+							}, {
+								pic: './img/yw3.png',
+								name: '丰富的物联生态资源',
+								desc: '对多业态、多场景智能化应用有深入理解，对行业内各个板块的供应商有充分的认知，具有强大的物联网生态伙伴落地能力'
+							}]
+						}
+					],
+					currentItem: {
+						title: '智慧社区',
+						desc: '通过为业主提供便捷、舒适、安全的生活环境，为物业提供完善的业务保障，打造持续的服务力，提升社区服务品质',
+						sections: [{
+							pic: './img/sq0.png',
+							name: '全场景社区服务',
+							desc: '联通环境、楼宇、消防、门禁等各系统，场景联动打造智慧人居生活服务体系'
+						}, {
+							pic: './img/sq1.png',
+							name: '完善的服务保障',
+							desc: '社区空间在线化，运营、业务可管，异常事件可控'
+						}, {
+							pic: './img/sq2.png',
+							name: '智慧驱动产品溢价',
+							desc: '智能化打造安全、便捷居住体验，驱动空间产品科技创新'
+						}, {
+							pic: './img/sq3.png',
+							name: '集团管理运筹帷幄',
+							desc: '可视化集团战图，全面了解项目运营情况，提升管理能效'
+						}]
+					}
+				},
+				methods: {
+					chooseItem(index) {
+						this.ins = index;
+						this.currentItem = this.items[index]
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
